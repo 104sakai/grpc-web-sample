@@ -1,0 +1,10 @@
+version: '3'
+services:
+  makeall:
+    build:
+      context: ../../
+      dockerfile: docker/protoc-all/Dockerfile
+    volumes:
+      - ../../.:/defs
+    entrypoint: "sh -c "
+    command: "'make -f docker/protoc-all/Makefile protoc'"
